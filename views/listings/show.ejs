@@ -1,0 +1,503 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container py-4">
+
+    <!-- Property Header -->
+
+    <div class="row mb-4">
+
+        <div class="col-lg-8">
+
+            <h2 class="fw-bold mb-2">
+                <%= listing.title %>
+            </h2>
+
+            <p class="text-muted mb-0">
+                <i class="fa-solid fa-location-dot text-danger"></i>
+                <%= listing.location %>, <%= listing.country %>
+            </p>
+
+        </div>
+
+        <% if(currUser && listing.owner._id.equals(currUser._id)){ %>
+
+        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+
+            <a
+                href="/listings/<%= listing._id %>/edit"
+                class="btn btn-outline-dark me-2"
+            >
+                <i class="fa-solid fa-pen"></i>
+                Edit
+            </a>
+
+            <form
+                action="/listings/<%= listing._id %>?_method=DELETE"
+                method="POST"
+                class="d-inline"
+            >
+                <button class="btn btn-danger">
+                    <i class="fa-solid fa-trash"></i>
+                    Delete
+                </button>
+            </form>
+
+        </div>
+
+        <% } %>
+
+    </div>
+
+    <!-- Property Card -->
+
+    <div class="card border-0 shadow rounded-4 overflow-hidden mb-5">
+
+        <img
+            src="<%= listing.image.url %>"
+            class="img-fluid"
+            style="height:500px;object-fit:cover;"
+            alt="<%= listing.title %>"
+        >
+
+        <div class="card-body p-4">
+
+            <div class="row">
+
+                <div class="col-md-8">
+
+                    <h4 class="fw-bold mb-3">
+                        About this property
+                    </h4>
+
+                    <p class="text-muted">
+                        <%= listing.description %>
+                    </p>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="border rounded-4 p-4 bg-light">
+
+                        <h5 class="fw-bold mb-3">
+                            Property Details
+                        </h5>
+
+                        <p class="mb-2">
+
+                            <i class="fa-solid fa-user text-danger"></i>
+
+                            <strong>Host:</strong>
+
+                            <%= listing.owner.username %>
+
+                        </p>
+
+                        <p class="mb-2">
+
+                            <i class="fa-solid fa-indian-rupee-sign text-success"></i>
+
+                            <strong>Price:</strong>
+
+                            ₹<%= listing.price.toLocaleString("en-IN") %>
+
+                            / night
+
+                        </p>
+
+                        <p class="mb-2">
+
+                            <i class="fa-solid fa-location-dot text-primary"></i>
+
+                            <%= listing.location %>
+
+                        </p>
+
+                        <p class="mb-0">
+
+                            <i class="fa-solid fa-earth-americas text-warning"></i>
+
+                            <%= listing.country %>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Map -->
+
+    <div class="card border-0 shadow rounded-4 mb-5">
+
+        <div class="card-body">
+
+            <h4 class="fw-bold mb-3">
+
+                <i class="fa-solid fa-map-location-dot text-danger"></i>
+
+                Property Location
+
+            </h4>
+
+            <div id="map"></div>
+
+        </div>
+
+    </div>
+
+    <!-- Reviews + Booking -->
+
+    <div class="row g-4">
+
+        <!-- Reviews -->
+
+        <div class="col-lg-7">
+
+            <% if(currUser){ %>
+
+            <div class="card border-0 shadow rounded-4 mb-4">
+
+                <div class="card-body">
+
+                    <h4 class="fw-bold mb-4">
+
+                        Leave a Review
+
+                    </h4>
+
+                    <form
+                        action="/listings/<%= listing.id %>/reviews"
+                        method="POST"
+                        class="needs-validation"
+                        novalidate
+                    >
+                                            <fieldset class="starability-slot">
+
+                            <input
+                                type="radio"
+                                id="no-rate"
+                                class="input-no-rate"
+                                name="review[rating]"
+                                value="0"
+                                checked
+                            />
+
+                            <input
+                                type="radio"
+                                id="first-rate1"
+                                name="review[rating]"
+                                value="1"
+                            />
+                            <label for="first-rate1">1 star</label>
+
+                            <input
+                                type="radio"
+                                id="first-rate2"
+                                name="review[rating]"
+                                value="2"
+                            />
+                            <label for="first-rate2">2 stars</label>
+
+                            <input
+                                type="radio"
+                                id="first-rate3"
+                                name="review[rating]"
+                                value="3"
+                            />
+                            <label for="first-rate3">3 stars</label>
+
+                            <input
+                                type="radio"
+                                id="first-rate4"
+                                name="review[rating]"
+                                value="4"
+                            />
+                            <label for="first-rate4">4 stars</label>
+
+                            <input
+                                type="radio"
+                                id="first-rate5"
+                                name="review[rating]"
+                                value="5"
+                            />
+                            <label for="first-rate5">5 stars</label>
+
+                        </fieldset>
+
+                        <div class="mb-3 mt-4">
+
+                            <label
+                                for="comment"
+                                class="form-label fw-semibold"
+                            >
+                                Share your experience
+                            </label>
+
+                            <textarea
+                                id="comment"
+                                name="review[comment]"
+                                class="form-control"
+                                rows="5"
+                                placeholder="Write your review..."
+                                required
+                            ></textarea>
+
+                            <div class="invalid-feedback">
+                                Please enter some comment.
+                            </div>
+
+                        </div>
+
+                        <button
+                            class="btn btn-dark px-4"
+                        >
+                            Submit Review
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <% } %>
+
+            <h4 class="fw-bold mb-4">
+
+                Guest Reviews
+
+            </h4>
+
+            <div class="row">
+
+                <% for(review of listing.reviews){ %>
+
+                <div class="col-md-6 mb-4">
+
+                    <div class="card border-0 shadow-sm rounded-4 h-100">
+
+                        <div class="card-body">
+
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+
+                                <h5 class="mb-0">
+
+                                    @<%= review.author.username %>
+
+                                </h5>
+
+                                <span
+                                    class="badge bg-dark"
+                                >
+                                    <%= review.rating %>/5
+                                </span>
+
+                            </div>
+
+                            <p
+                                class="starability-result"
+                                data-rating="<%= review.rating %>"
+                            ></p>
+
+                            <p class="text-muted">
+
+                                <%= review.comment %>
+
+                            </p>
+
+                        </div>
+
+                        <div class="card-footer bg-white border-0">
+
+                            <form
+                                action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE"
+                                method="POST"
+                            >
+
+                                <button
+                                    class="btn btn-outline-danger btn-sm"
+                                >
+                                    Delete Review
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <% } %>
+
+            </div>
+
+        </div>
+
+        <!-- Booking Column -->
+
+        <div class="col-lg-5">
+
+            <div
+                class="card border-0 shadow-lg rounded-4 p-4 booking-card sticky-top"
+            >
+
+                <h4 class="fw-bold mb-3">
+
+                    Book this Hotel
+
+                </h4>
+
+                <hr>
+
+                <form
+                    id="bookingForm"
+                    action="/listings/<%= listing._id %>/book"
+                    method="POST"
+                >
+                                    <div class="mb-3">
+
+                        <label class="form-label fw-semibold">
+
+                            Check-In
+
+                        </label>
+
+                        <input
+                            type="date"
+                            id="checkIn"
+                            name="checkIn"
+                            class="form-control"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="form-label fw-semibold">
+
+                            Check-Out
+
+                        </label>
+
+                        <input
+                            type="date"
+                            id="checkOut"
+                            name="checkOut"
+                            class="form-control"
+                            required
+                        >
+
+                    </div>
+
+                    <div
+                        id="bookingStatus"
+                        class="alert alert-secondary"
+                    >
+                        Select Check-In & Check-Out
+                    </div>
+
+                    <div class="border rounded-4 p-3 bg-light">
+
+                        <div class="d-flex justify-content-between mb-3">
+
+                            <span class="fw-semibold">
+
+                                Price / Night
+
+                            </span>
+
+                            <span>
+
+                                ₹<%= listing.price.toLocaleString("en-IN") %>
+
+                            </span>
+
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-3">
+
+                            <span class="fw-semibold">
+
+                                Nights
+
+                            </span>
+
+                            <span id="totalNights">
+
+                                0
+
+                            </span>
+
+                        </div>
+
+                        <hr>
+
+                        <div class="d-flex justify-content-between">
+
+                            <h5 class="fw-bold">
+
+                                Total
+
+                            </h5>
+
+                            <h5
+                                class="fw-bold text-success"
+                                id="totalPrice"
+                            >
+
+                                ₹0
+
+                            </h5>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        id="bookBtn"
+                        class="btn btn-danger w-100 mt-4 py-2"
+                        disabled
+                    >
+
+                        <i class="fa-solid fa-calendar-check me-2"></i>
+
+                        Book Now
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <input
+        type="hidden"
+        id="pricePerNight"
+        value="<%= listing.price %>"
+    >
+
+    <script type="application/json" id="listing-data">
+        <%- JSON.stringify({
+            title: listing.title,
+            latitude: listing.latitude,
+            longitude: listing.longitude
+        }).replace(/</g,"\\u003c") %>
+    </script>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script src="/js/map.js"></script>
+
+    <script src="/js/booking.js"></script>

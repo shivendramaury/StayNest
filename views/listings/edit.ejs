@@ -1,0 +1,281 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="edit-page">
+
+    <div class="container">
+
+        <div class="edit-card">
+
+            <!-- Page Header -->
+
+            <div class="edit-header">
+
+                <div>
+                    <h2>Edit Listing</h2>
+                    <p>
+                        Update your property details and keep your listing
+                        attractive for travelers.
+                    </p>
+                </div>
+
+                <a href="/listings/<%= listing._id %>" class="back-btn">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back
+                </a>
+
+            </div>
+
+            <!-- Current Image -->
+
+            <div class="current-image">
+
+                <img
+                    src="<%= originalImageUrl %>"
+                    alt="<%= listing.title %>"
+                >
+
+                <div class="image-overlay">
+                    <h5><%= listing.title %></h5>
+                    <span>Current Listing Image</span>
+                </div>
+
+            </div>
+
+            <!-- Form Starts -->
+
+            <form
+                action="/listings/<%= listing._id %>?_method=PUT"
+                method="POST"
+                enctype="multipart/form-data"
+                class="needs-validation"
+                novalidate
+            >
+
+                <!-- Title -->
+
+                <div class="mb-4">
+
+                    <label class="form-label">
+                        Property Title
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control custom-input"
+                        name="listing[title]"
+                        value="<%= listing.title %>"
+                        minlength="3"
+                        required
+                    >
+
+                    <div class="invalid-feedback">
+                        Title should contain at least 3 characters.
+                    </div>
+
+                </div>
+
+                <!-- Description -->
+
+                <div class="mb-4">
+
+                    <label class="form-label">
+                        Description
+                    </label>
+
+                    <textarea
+                        class="form-control custom-input"
+                        rows="5"
+                        name="listing[description]"
+                        required
+                    ><%= listing.description %></textarea>
+
+                    <div class="invalid-feedback">
+                        Please enter a valid description.
+                    </div>
+
+                </div>
+
+                <!-- Upload Image -->
+
+                <div class="mb-4">
+
+                    <label class="form-label">
+                        Upload New Image
+                    </label>
+
+                    <input
+                        type="file"
+                        class="form-control custom-input"
+                        name="listing[image]"
+                    >
+
+                    <small class="text-muted">
+                        Leave this empty if you don't want to change the image.
+                    </small>
+
+                </div>
+
+                <!-- Price + Category -->
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-4">
+
+                        <label class="form-label">
+                            Price (₹)
+                        </label>
+
+                        <input
+                            type="number"
+                            class="form-control custom-input"
+                            name="listing[price]"
+                            value="<%= listing.price %>"
+                            required
+                        >
+
+                        <div class="invalid-feedback">
+                            Enter a valid price.
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+
+                        <label class="form-label">
+                            Category
+                        </label>
+
+                        <select
+                            class="form-select custom-input"
+                            name="listing[category]"
+                            required
+                        >
+                                                    <option value="Trending"
+                                <%= listing.category === "Trending" ? "selected" : "" %>>
+                                Trending
+                            </option>
+
+                            <option value="Rooms"
+                                <%= listing.category === "Rooms" ? "selected" : "" %>>
+                                Rooms
+                            </option>
+
+                            <option value="Iconic Cities"
+                                <%= listing.category === "Iconic Cities" ? "selected" : "" %>>
+                                Iconic Cities
+                            </option>
+
+                            <option value="Castles"
+                                <%= listing.category === "Castles" ? "selected" : "" %>>
+                                Castles
+                            </option>
+
+                            <option value="Amazing Pool"
+                                <%= listing.category === "Amazing Pool" ? "selected" : "" %>>
+                                Amazing Pool
+                            </option>
+
+                            <option value="Camping"
+                                <%= listing.category === "Camping" ? "selected" : "" %>>
+                                Camping
+                            </option>
+
+                            <option value="Farms"
+                                <%= listing.category === "Farms" ? "selected" : "" %>>
+                                Farms
+                            </option>
+
+                            <option value="Arctic"
+                                <%= listing.category === "Arctic" ? "selected" : "" %>>
+                                Arctic
+                            </option>
+
+                            <option value="Domes"
+                                <%= listing.category === "Domes" ? "selected" : "" %>>
+                                Domes
+                            </option>
+
+                        </select>
+
+                        <div class="invalid-feedback">
+                            Please select a category.
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Country & Location -->
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-4">
+
+                        <label class="form-label">
+                            Country
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control custom-input"
+                            name="listing[country]"
+                            value="<%= listing.country %>"
+                            required
+                        >
+
+                        <div class="invalid-feedback">
+                            Please enter a valid country.
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+
+                        <label class="form-label">
+                            Location
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control custom-input"
+                            name="listing[location]"
+                            value="<%= listing.location %>"
+                            required
+                        >
+
+                        <div class="invalid-feedback">
+                            Please enter a valid location.
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Bottom Buttons -->
+
+                <div class="d-flex justify-content-between align-items-center mt-4">
+
+                    <a
+                        href="/listings/<%= listing._id %>"
+                        class="btn btn-outline-secondary px-4"
+                    >
+                        Cancel
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="btn update-btn px-5"
+                    >
+                        <i class="fa-solid fa-floppy-disk me-2"></i>
+                        Update Listing
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

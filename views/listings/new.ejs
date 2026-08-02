@@ -1,0 +1,137 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container mt-4">
+    <h2 class="mb-4">Create a New Listing</h2>
+
+    <form action="/listings" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
+
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Title</label>
+            <div class="col-sm-6">
+                <input
+                    type="text"
+                    name="listing[title]"
+                    placeholder="Enter title"
+                    class="form-control"
+                    minlength="3"
+                    required
+                >
+                <div class="valid-feedback">Title looks good</div>
+                <div class="invalid-feedback">Title Should be min 3 character</div>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-6">
+                <textarea
+                    name="listing[description]"
+                    class="form-control"
+                    rows="4"
+                    required
+                ></textarea>
+                <div class="invalid-feedback">
+                    Please enter description
+                </div>
+            </div>
+        </div>
+
+       
+
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Upload Image</label>
+            <div class="col-sm-6">
+                <input
+                    type="file"
+                    name="listing[image]"
+                    class="form-control"
+                    required
+                >
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Price</label>
+            <div class="col-sm-6">
+                <input
+                    type="number"
+                    name="listing[price]"
+                    placeholder="Enter price"
+                    class="form-control"
+                    required
+                    min="1000"
+                    max="10000000"
+                >
+                <div class="invalid-feedback">
+                    Price should be valid
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Category</label>
+
+            <div class="col-sm-6">
+                <select
+                    class="form-select"
+                    name="listing[category]"
+                    required
+                >
+
+                    <option value="">Choose Category</option>
+                    <option>Hotel</option>
+                    <option>Villa</option>
+                    <option>Apartment</option>
+                    <option>Resort</option>
+                    <option>Farm House</option>
+                    <option>Cabin</option>
+                    <option>Camping</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label">Country</label>
+            <div class="col-sm-6">
+                <input
+                    type="text"
+                    name="listing[country]"
+                    placeholder="Enter country"
+                    class="form-control"
+                    required
+                    minlength="3"
+                >
+                <div class="invalid-feedback">
+                    Country should be valid
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3 position-relative">
+    <label for="location" class="form-label">Location</label>
+
+    <input
+        type="text"
+        id="location"
+        name="listing[location]"
+        class="form-control"
+        placeholder="Start typing location..."
+        autocomplete="off"
+        required
+    >
+
+    <div id="location-suggestions"></div>
+
+    <div class="invalid-feedback">
+        Please enter a valid location.
+    </div>
+</div>
+
+        <button class="btn btn-dark add-btn">
+            <b>Add</b>
+        </button>
+
+    </form>
+</div>
+
+<script src="/js/autocomplete.js"></script>

@@ -1,0 +1,178 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <h3>All Listings</h3>
+    <!-- <form method="GET" action="/listings/new">
+        <button>Create New Listing</button>
+    </form> -->
+
+    <style>
+        #filters {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter {
+            text-align: center;
+            margin-right: 2rem;
+            margin-top: 2rem;
+            opacity: 0.7;
+        }
+
+        .filter:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        .filter p {
+            font-size: 0.9rem;
+        }
+
+    </style>
+
+    <div id="filters">
+
+        <a href="/listings" class="filter-link">
+            <div class="filter">
+                <div><i class="fa-solid fa-house"></i></div>
+                <p>All</p>
+            </div>
+        </a>
+
+        <a href="/listings?category=Trending" class="filter-link">
+    <div class="filter">
+        <div><i class="fa-solid fa-fire"></i></div>
+        <p>Trending</p>
+    </div>
+</a>
+        <a href="/listings?category=Rooms" class="filter-link">
+    <div class="filter">
+        <div><i class="fa-solid fa-bed"></i></div>
+        <p>Rooms</p>
+    </div>
+</a>
+        
+
+        <a href="/listings?category=Iconic Cities" class="filter-link">
+            <div class="filter">
+                <div><i class="fa-solid fa-city"></i></div>
+                <p>Iconic Cities</p>
+            </div>
+        </a>
+
+    
+
+        <a href="/listings?category=Castles" class="filter-link">
+            <div class="filter">
+                <div><i class="fa-brands fa-fort-awesome"></i></div>
+                <p>Castles</p>
+            </div>
+        </a>
+
+
+        <a href="/listings?category=Amazing Pool" class="filter-link">
+            <div class="filter">
+                <div><i class="fa-solid fa-person-swimming"></i></div>
+                <p>Amazing Pool</p>
+            </div>
+        </a>
+
+        <a href="/listings?category=Camping" class="filter-link">
+            <div class="filter">
+                <div><i class="fa-solid fa-campground"></i></div>
+                <p>Camping</p>
+            </div>
+        </a>
+
+
+        <a href="/listings?category=Farms" class="filter-link">
+            <div class="filter">
+                <div><i class="fa-solid fa-building-wheat"></i></div>
+                <p>Farms</p>
+            </div>
+        </a>
+
+
+        <a href="/listings?category=Arctic" class="filter-link">
+            <div class="filter">
+                <div><i class="fa-solid fa-igloo"></i></div>
+                <p>Arctic</p>
+            </div>
+        </a>
+        
+
+        <a href="/listings?category=Domes" class="filter-link">
+            <div class="filter">
+                <div><i class="fa-solid fa-landmark-dome"></i></div>
+                <p>Domes</p>
+            </div>
+        </a>
+
+ 
+    </div>
+
+
+    <% if(allListings.length === 0){ %>
+
+<div class="text-center mt-5">
+    <h3>No Listings Found</h3>
+    <p>Try another location or category.</p>
+</div>
+
+<% } else { %>
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+
+<% for(let listing of allListings){ %>
+
+<a href="/listings/<%= listing._id %>" class="listing-link">
+
+<div class="card col listing-card">
+
+<img
+src="<%= listing.image.url %>"
+class="card-img-top"
+style="height:20rem;"
+>
+
+<div class="card-body">
+
+<p class="card-text">
+
+<b><%= listing.title %></b>
+
+<br>
+
+₹ <%= listing.price.toLocaleString("en-IN") %>/night
+
+</p>
+
+</div>
+
+</div>
+
+</a>
+
+<% } %>
+
+</div>
+
+<% } %>
+
+    <script>
+        let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+        taxSwitch.addEventListener("click", () => {
+            let taxInfo = document.getElementsByClassName("tax-info");
+            for(info of taxInfo) {
+                if(info.style.display != "inline"){
+                info.style.display = "inline";
+                }
+                else{
+                    info.style.display = "none";
+                }
+            }
+        })
+    </script>
+    
+</body>

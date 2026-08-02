@@ -1,0 +1,259 @@
+body{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+
+.navbar-brand{
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+/* footer */
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+}
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info-links,
+.f-info-brand,
+.f-info-socials{
+    width: 100%;
+    font-size: 1.2rem;
+    margin-right: 2rem;
+
+}
+
+.f-info-socials i {
+    margin-right: 1rem;
+}
+
+.f-info{
+    text-align: center;
+    display: flex;
+    height: 8rem;
+    background-color: #ebebeb;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+/* cards */
+
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body{
+    padding: 0 !important;
+}
+
+.card-text p {
+    font-weight: 400;
+}
+
+.listing-link {
+    text-decoration: none;
+}
+
+/* Card Effect */
+.card-img-overlay {
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+
+.container{
+    flex: 1;
+}
+
+.add-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+.edit-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+.show-img{
+    height: 40vh;
+    width: 100%;
+    object-fit: contain;
+}
+
+.btns {
+    display: flex;
+}
+
+.show-card {
+    padding-left: 0;
+    padding-right: 0;;
+}
+
+.col1{
+    display: flex;
+    margin-bottom: 3vh;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 12px;
+}
+
+#location-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    background-color: white;
+
+    border: 1px solid #ddd;
+    max-height: 220px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.location-suggestion {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.location-suggestion:hover {
+    background-color: #f1f1f1;
+}
+
+.home-navbar{
+    background: transparent !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: none !important;
+}
+
+.home-navbar .nav-link,
+.home-navbar .nav-brand,
+.home-navbar i{
+    color: white !important;
+    font-weight: 500;
+}
+
+.home-navbar .form-control{
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* LOGIN PAGE */
+
+.login-page{
+    min-height:85vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 15px;
+}
+
+.login-card{
+    width:100%;
+    max-width:470px;
+
+    background:rgba(255,255,255,.92);
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+    animation:fadeUp .8s ease;
+}
+
+.login-icon{
+    font-size:55px;
+    color:#fe424d;
+    margin-bottom:15px;
+}
+
+.login-card h2{
+    font-weight:700;
+}
+
+.login-card p{
+    color:#666;
+}
+
+.login-card .form-control{
+    height:50px;
+    border-radius:10px;
+}
+
+.login-card .input-group-text{
+    background:#fff;
+    border-radius:10px 0 0 10px;
+}
+
+.login-btn{
+    background:#fe424d;
+    color:#fff;
+    border:none;
+    height:50px;
+    font-size:18px;
+    font-weight:600;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    background:#d93642;
+    transform:translateY(-2px);
+}
+
+.login-card a{
+    text-decoration:none;
+    color:#fe424d;
+    font-weight:600;
+}
+
+.login-card a:hover{
+    text-decoration:underline;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}

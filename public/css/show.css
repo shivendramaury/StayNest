@@ -1,0 +1,105 @@
+/* Hero Image */
+
+.card img{
+    transition:0.4s;
+}
+
+.card img:hover{
+    transform:scale(1.02);
+}
+
+/* Property Card */
+
+.card{
+    border-radius:20px;
+}
+
+.card-body h4{
+    font-weight:700;
+}
+
+/* Map */
+
+#map{
+    height:400px;
+    width:100%;
+    border-radius:15px;
+}
+
+/* Booking Card */
+
+.booking-card{
+    top:90px;
+    transition:0.3s;
+}
+
+.booking-card:hover{
+    transform:translateY(-4px);
+}
+
+.booking-card .form-control{
+    border-radius:10px;
+}
+
+.booking-card button{
+    font-weight:600;
+    border-radius:10px;
+}
+
+/* Review Cards */
+
+.card-footer{
+    background:white;
+}
+
+.starability-result{
+    margin-bottom:10px;
+}
+
+.card.shadow-sm{
+    transition:0.3s;
+}
+
+.card.shadow-sm:hover{
+    transform:translateY(-6px);
+    box-shadow:0 .7rem 1.5rem rgba(0,0,0,.12)!important;
+}
+
+/* Buttons */
+
+.btn{
+    border-radius:10px;
+}
+
+/* Property Details */
+
+.bg-light{
+    border:1px solid #eee;
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+    .booking-card{
+        position:static !important;
+        margin-top:30px;
+    }
+
+    #map{
+        height:300px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    h2{
+        font-size:1.8rem;
+    }
+
+    .card img{
+        height:300px !important;
+    }
+
+}
