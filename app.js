@@ -7,7 +7,7 @@ const app = express();
 const mongoose = require("mongoose");
 const path = require("path");
 const methodOverride = require("method-override");
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
+const MONGO_URL = process.env.MONGO_URL;
 const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
 const reviewRouter = require("./routes/review.js");
@@ -49,7 +49,7 @@ app.use(express.static(path.join(__dirname, "/public")));
 // ==================== Session ====================
 
 const sessionOptions = {
-    secret: "mysupersecretcode",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -124,6 +124,8 @@ app.use((err, req, res, next) => {
 
 // ==================== Server ====================
 
-app.listen(8080, () => {
-    console.log("server is listening to port 8080");
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
 });
