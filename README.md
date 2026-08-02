@@ -80,15 +80,13 @@ npm start
 
 ## 📸 Screenshots
 
-Add screenshots of your application here.
+<img width="1919" height="969" alt="image" src="https://github.com/user-attachments/assets/43d55825-b422-4487-8304-0e4bb1091bd2" />
+
 
 ## 👨‍💻 Author
 
 **Shivendra Maurya**
 
 - GitHub: https://github.com/shivendramaury
-- LinkedIn: *(Add your LinkedIn URL here)*
+- LinkedIn: [*(Add your LinkedIn URL here)*](https://www.linkedin.com/in/shivendramaury/)
 
-## 📄 License
-
-This project is licensed under the MIT License.
