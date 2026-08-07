@@ -8,8 +8,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 1500,
-    location: "Malibu",
-    country: "United States",
+    location: "Goa",
+    country: "India",
   },
   {
     title: "Modern Loft in Downtown",
@@ -20,8 +20,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 1200,
-    location: "New York City",
-    country: "United States",
+    location: "Manali",
+    country: "India",
   },
   {
     title: "Mountain Retreat",
@@ -32,8 +32,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aG90ZWxzfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 1000,
-    location: "Aspen",
-    country: "United States",
+    location: "Shimla",
+    country: "India",
   },
   {
     title: "Historic Villa in Tuscany",
@@ -44,8 +44,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 2500,
-    location: "Florence",
-    country: "Italy",
+    location: "Jaipur",
+    country: "India",
   },
   {
     title: "Secluded Treehouse Getaway",
@@ -56,8 +56,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGhvdGVsc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 800,
-    location: "Portland",
-    country: "United States",
+    location: "Udaipur",
+    country: "India",
   },
   {
     title: "Beachfront Paradise",
@@ -68,10 +68,10 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGhvdGVsc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 2000,
-    location: "Cancun",
-    country: "Mexico",
+    location: "Mumbai",
+    country: "India",
   },
-  {
+    {
     title: "Rustic Cabin by the Lake",
     description:
       "Spend your days fishing and kayaking on the serene lake. This cozy cabin is perfect for outdoor enthusiasts.",
@@ -80,8 +80,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1vdW50YWlufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 900,
-    location: "Lake Tahoe",
-    country: "United States",
+    location: "Rishikesh",
+    country: "India",
   },
   {
     title: "Luxury Penthouse with City Views",
@@ -92,8 +92,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1622396481328-9b1b78cdd9fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2t5JTIwdmFjYXRpb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 3500,
-    location: "Los Angeles",
-    country: "United States",
+    location: "Bengaluru",
+    country: "India",
   },
   {
     title: "Ski-In/Ski-Out Chalet",
@@ -104,8 +104,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1502784444187-359ac186c5bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNreSUyMHZhY2F0aW9ufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 3000,
-    location: "Verbier",
-    country: "Switzerland",
+    location: "Gulmarg",
+    country: "India",
   },
   {
     title: "Safari Lodge in the Serengeti",
@@ -116,8 +116,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fG1vdW50YWlufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 4000,
-    location: "Serengeti National Park",
-    country: "Tanzania",
+    location: "Ranthambore",
+    country: "India",
   },
   {
     title: "Historic Canal House",
@@ -128,8 +128,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2FtcGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 1800,
-    location: "Amsterdam",
-    country: "Netherlands",
+    location: "Varanasi",
+    country: "India",
   },
   {
     title: "Private Island Retreat",
@@ -140,10 +140,10 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1618140052121-39fc6db33972?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bG9kZ2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 10000,
-    location: "Fiji",
-    country: "Fiji",
+    location: "Alleppey",
+    country: "India",
   },
-  {
+    {
     title: "Charming Cottage in the Cotswolds",
     description:
       "Escape to the picturesque Cotswolds in this quaint and charming cottage with a thatched roof.",
@@ -152,8 +152,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1602088113235-229c19758e9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmVhY2glMjB2YWNhdGlvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 1200,
-    location: "Cotswolds",
-    country: "United Kingdom",
+    location: "Andaman",
+    country: "India",
   },
   {
     title: "Historic Brownstone in Boston",
@@ -164,8 +164,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1533619239233-6280475a633a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNreSUyMHZhY2F0aW9ufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 2200,
-    location: "Boston",
-    country: "United States",
+    location: "Jaisalmer",
+    country: "India",
   },
   {
     title: "Beachfront Bungalow in Bali",
@@ -176,8 +176,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1602391833977-358a52198938?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGNhbXBpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 1800,
-    location: "Bali",
-    country: "Indonesia",
+    location: "Amritsar",
+    country: "India",
   },
   {
     title: "Mountain View Cabin in Banff",
@@ -188,8 +188,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1521401830884-6c03c1c87ebb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGxvZGdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 1500,
-    location: "Banff",
-    country: "Canada",
+    location: "Kochi",
+    country: "India",
   },
   {
     title: "Art Deco Apartment in Miami",
@@ -200,8 +200,8 @@ const sampleListings = [
       url: "https://plus.unsplash.com/premium_photo-1670963964797-942df1804579?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGxvZGdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 1600,
-    location: "Miami",
-    country: "United States",
+    location: "Munnar",
+    country: "India",
   },
   {
     title: "Tropical Villa in Phuket",
@@ -212,10 +212,10 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1470165301023-58dab8118cc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGxvZGdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 3000,
-    location: "Phuket",
-    country: "Thailand",
+    location: "Darjeeling",
+    country: "India",
   },
-  {
+    {
     title: "Historic Castle in Scotland",
     description:
       "Live like royalty in this historic castle in the Scottish Highlands. Explore the rugged beauty of the area.",
@@ -224,8 +224,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1585543805890-6051f7829f98?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGJlYWNoJTIwdmFjYXRpb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 4000,
-    location: "Scottish Highlands",
-    country: "United Kingdom",
+    location: "Ooty",
+    country: "India",
   },
   {
     title: "Desert Oasis in Dubai",
@@ -236,8 +236,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1518684079-3c830dcef090?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZHViYWl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 5000,
-    location: "Dubai",
-    country: "United Arab Emirates",
+    location: "Leh",
+    country: "India",
   },
   {
     title: "Rustic Log Cabin in Montana",
@@ -248,8 +248,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1586375300773-8384e3e4916f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGxvZGdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 1100,
-    location: "Montana",
-    country: "United States",
+    location: "Jodhpur",
+    country: "India",
   },
   {
     title: "Beachfront Villa in Greece",
@@ -260,8 +260,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dmlsbGF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 2500,
-    location: "Mykonos",
-    country: "Greece",
+    location: "Puducherry",
+    country: "India",
   },
   {
     title: "Eco-Friendly Treehouse Retreat",
@@ -272,8 +272,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1488462237308-ecaa28b729d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c2t5JTIwdmFjYXRpb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 750,
-    location: "Costa Rica",
-    country: "Costa Rica",
+    location: "Coorg",
+    country: "India",
   },
   {
     title: "Historic Cottage in Charleston",
@@ -284,10 +284,10 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1587381420270-3e1a5b9e6904?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGxvZGdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 1600,
-    location: "Charleston",
-    country: "United States",
+    location: "Nainital",
+    country: "India",
   },
-  {
+    {
     title: "Modern Apartment in Tokyo",
     description:
       "Explore the vibrant city of Tokyo from this modern and centrally located apartment.",
@@ -296,8 +296,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1480796927426-f609979314bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHRva3lvfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     price: 2000,
-    location: "Tokyo",
-    country: "Japan",
+    location: "Mysuru",
+    country: "India",
   },
   {
     title: "Lakefront Cabin in New Hampshire",
@@ -308,8 +308,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1578645510447-e20b4311e3ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fGNhbXBpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 1200,
-    location: "New Hampshire",
-    country: "United States",
+    location: "Auli",
+    country: "India",
   },
   {
     title: "Luxury Villa in the Maldives",
@@ -320,8 +320,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGFrZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 6000,
-    location: "Maldives",
-    country: "Maldives",
+    location: "Shillong",
+    country: "India",
   },
   {
     title: "Ski Chalet in Aspen",
@@ -332,8 +332,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGxha2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 4000,
-    location: "Aspen",
-    country: "United States",
+    location: "Kolkata",
+    country: "India",
   },
   {
     title: "Secluded Beach House in Costa Rica",
@@ -344,8 +344,8 @@ const sampleListings = [
       url: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhY2glMjBob3VzZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
     },
     price: 1800,
-    location: "Costa Rica",
-    country: "Costa Rica",
+    location: "Lonavala",
+    country: "India",
   },
 ];
 

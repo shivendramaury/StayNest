@@ -31,6 +31,8 @@ main()
 
 async function main() {
     await mongoose.connect(MONGO_URL);
+    console.log("Connected DB:", mongoose.connection.name);
+    console.log("Connected Host:", mongoose.connection.host);
 }
 
 // ==================== View Engine ====================
@@ -124,6 +126,7 @@ app.use((err, req, res, next) => {
         err,
     });
 });
+
 
 // ==================== Server ====================
 

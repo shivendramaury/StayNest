@@ -22,7 +22,10 @@ module.exports.index = async (req, res) => {
         };
     }
 
+    console.log("Filter:", filter);
+
     const allListings = await Listing.find(filter);
+    console.log("Collection Count:", await Listing.countDocuments());
 
     res.render("listings/index.ejs", {
         allListings,
